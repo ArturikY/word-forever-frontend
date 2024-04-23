@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="css/normalize.css"
+			media="screen"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="libs/bootstrap5/bootstrap.min.css"
+			media="screen"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="css/swiper-bundle.min.css"
+			media="screen"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="css/card-js.min.css"
+			media="screen"
+		/>
+		<link
+			rel="stylesheet icon"
+			type="text/css"
+			href="css/style.css"
+			media="screen"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="UTF-8" />
+		<title>Личный кабинет</title>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="prsn-sec">
+				<img src="images/main-bg.png" alt="" class="prsn-bg" />
+
+				<div class="container-fluid p-0">
+					<div class="prsn-rov">
+						<div class="prsn-sidebar">
+							<div class="side-logo">
+								<a href="/index.html"><img src="images/logo.svg" alt="" /></a>
+							</div>
+
+							<div class="side-menu">
+								<div
+									class="nav flex-column nav-pills"
+									id="v-pills-tab"
+									role="tablist"
+									aria-orientation="vertical"
+								>
+									<button
+										class="nav-link active nav-link-cards"
+										id="v-pills-home-tab"
+										data-bs-toggle="pill"
+										data-bs-target="#v-pills-home"
+										type="button"
+										role="tab"
+										aria-controls="v-pills-home"
+										aria-selected="false"
+									>
+										<span class="icon pc">
+											<svg
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													d="M7 11.5C6.44772 11.5 6 11.0523 6 10.5V7C6 6.44772 6.44772 6 7 6H10.5C11.0523 6 11.5 6.44772 11.5 7V10.5C11.5 11.0523 11.0523 11.5 10.5 11.5H7ZM7 18C6.44772 18 6 17.5523 6 17V13.5C6 12.9477 6.44772 12.5 7 12.5H10.5C11.0523 12.5 11.5 12.9477 11.5 13.5V17C11.5 17.5523 11.0523 18 10.5 18H7ZM13.5 11.5C12.9477 11.5 12.5 11.0523 12.5 10.5V7C12.5 6.44772 12.9477 6 13.5 6H17C17.5523 6 18 6.44772 18 7V10.5C18 11.0523 17.5523 11.5 17 11.5H13.5ZM13.5 18C12.9477 18 12.5 17.5523 12.5 17V13.5C12.5 12.9477 12.9477 12.5 13.5 12.5H17C17.5523 12.5 18 12.9477 18 13.5V17C18 17.5523 17.5523 18 17 18H13.5ZM5 21C4.45 21 3.97933 20.8043 3.588 20.413C3.19667 20.0217 3.00067 19.5507 3 19V5C3 4.45 3.196 3.97933 3.588 3.588C3.98 3.19667 4.45067 3.00067 5 3H19C19.55 3 20.021 3.196 20.413 3.588C20.805 3.98 21.0007 4.45067 21 5V19C21 19.55 20.8043 20.021 20.413 20.413C20.0217 20.805 19.5507 21.0007 19 21H5ZM5 18C5 18.5523 5.44772 19 6 19H18C18.5523 19 19 18.5523 19 18V6C19 5.44772 18.5523 5 18 5H6C5.44772 5 5 5.44772 5 6V18Z"
+													fill="#444444"
+												/>
+											</svg>
+										</span>
+										<span class="icon mob">
+											<svg
+												width="27"
+												height="27"
+												viewBox="0 0 27 27"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													opacity="0.6"
+													d="M0.999998 12.375C0.447713 12.375 -2.08543e-06 11.9273 -1.98887e-06 11.375L-1.74846e-07 1C-7.82811e-08 0.447715 0.447715 7.8281e-08 1 1.74846e-07L11.375 1.98887e-06C11.9273 2.08543e-06 12.375 0.447717 12.375 1L12.375 11.375C12.375 11.9273 11.9273 12.375 11.375 12.375L0.999998 12.375ZM0.999996 27C0.447711 27 -4.64255e-06 26.5523 -4.54598e-06 26L-2.73196e-06 15.625C-2.6354e-06 15.0727 0.447713 14.625 0.999997 14.625L11.375 14.625C11.9273 14.625 12.375 15.0727 12.375 15.625L12.375 26C12.375 26.5523 11.9273 27 11.375 27L0.999996 27ZM15.625 12.375C15.0727 12.375 14.625 11.9273 14.625 11.375L14.625 1C14.625 0.447718 15.0727 2.6354e-06 15.625 2.73196e-06L26 4.54598e-06C26.5523 4.64255e-06 27 0.44772 27 1L27 11.375C27 11.9273 26.5523 12.375 26 12.375L15.625 12.375ZM15.625 27C15.0727 27 14.625 26.5523 14.625 26L14.625 15.625C14.625 15.0727 15.0727 14.625 15.625 14.625L26 14.625C26.5523 14.625 27 15.0727 27 15.625L27 26C27 26.5523 26.5523 27 26 27L15.625 27Z"
+													fill="white"
+												/>
+											</svg>
+										</span>
+										<span class="text">Мои карточки</span>
+									</button>
+									<button
+										class="nav-link"
+										id="v-pills-profile-tab"
+										data-bs-toggle="pill"
+										data-bs-target="#v-pills-profile"
+										type="button"
+										role="tab"
+										aria-controls="v-pills-profile"
+										aria-selected="false"
+									>
+										<span class="icon pc">
+											<svg
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													d="M18.75 18.6923C18.75 19.0274 18.633 19.3081 18.399 19.5344C18.165 19.7607 17.8757 19.8742 17.5312 19.875C17.1859 19.875 16.8967 19.7615 16.6635 19.5344C16.4303 19.3073 16.3133 19.0266 16.3125 18.6923L16.3125 5.6827C16.3125 5.3476 16.4295 5.06651 16.6635 4.83944C16.8975 4.61236 17.1867 4.49922 17.5312 4.5C17.8766 4.5 18.1662 4.61354 18.4002 4.84062C18.6342 5.0677 18.7508 5.34839 18.75 5.6827L18.75 18.6923ZM12.6562 18.6923C12.6562 19.0274 12.5392 19.3081 12.3052 19.5344C12.0712 19.7607 11.782 19.8742 11.4375 19.875C11.0922 19.875 10.8029 19.7615 10.5697 19.5344C10.3366 19.3073 10.2196 19.0266 10.2187 18.6923L10.2187 9.23077C10.2187 8.89568 10.3357 8.61459 10.5697 8.38751C10.8037 8.16044 11.093 8.04729 11.4375 8.04808C11.7828 8.04808 12.0725 8.16162 12.3065 8.3887C12.5405 8.61577 12.6571 8.89646 12.6562 9.23077L12.6562 18.6923ZM6.5625 18.6923C6.5625 19.0274 6.4455 19.3081 6.2115 19.5344C5.9775 19.7607 5.68825 19.8742 5.34375 19.875C4.99844 19.875 4.70919 19.7615 4.476 19.5344C4.24281 19.3073 4.12581 19.0266 4.125 18.6923L4.125 13.0745C4.125 12.7394 4.242 12.4583 4.476 12.2313C4.71 12.0042 4.99925 11.891 5.34375 11.8918C5.68906 11.8918 5.97872 12.0054 6.21272 12.2324C6.44672 12.4595 6.56331 12.7402 6.5625 13.0745L6.5625 18.6923Z"
+													fill="#444444"
+												/>
+											</svg>
+										</span>
+										<span class="icon mob">
+											<svg
+												width="26"
+												height="27"
+												viewBox="0 0 26 27"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													opacity="0.6"
+													d="M26 24.9231C26 25.5115 25.792 26.0045 25.376 26.4018C24.96 26.7992 24.4458 26.9986 23.8333 27C23.2194 27 22.7052 26.8006 22.2907 26.4018C21.8761 26.0031 21.6681 25.5102 21.6667 24.9231L21.6667 2.07693C21.6667 1.48847 21.8747 0.994849 22.2907 0.59608C22.7067 0.197311 23.2209 -0.00137978 23.8333 5.03271e-06C24.4472 5.11321e-06 24.9622 0.19939 25.3782 0.598159C25.7942 0.996929 26.0014 1.48985 26 2.07693L26 24.9231ZM15.1667 24.9231C15.1667 25.5115 14.9587 26.0045 14.5427 26.4018C14.1267 26.7992 13.6124 26.9986 13 27C12.3861 27 11.8719 26.8006 11.4573 26.4018C11.0428 26.0031 10.8348 25.5102 10.8333 24.9231L10.8333 8.30769C10.8333 7.71923 11.0413 7.22562 11.4573 6.82685C11.8733 6.42808 12.3876 6.22939 13 6.23077C13.6139 6.23077 14.1288 6.43016 14.5448 6.82893C14.9608 7.2277 15.1681 7.72062 15.1667 8.3077L15.1667 24.9231ZM4.33333 24.9231C4.33333 25.5115 4.12533 26.0045 3.70933 26.4018C3.29333 26.7992 2.77911 26.9986 2.16667 27C1.55278 27 1.03856 26.8006 0.624 26.4018C0.209445 26.0031 0.00144464 25.5102 2.72356e-07 24.9231L1.67259e-06 15.0577C1.74976e-06 14.4692 0.208002 13.9756 0.624002 13.5768C1.04 13.1781 1.55422 12.9794 2.16667 12.9808C2.78056 12.9808 3.2955 13.1802 3.7115 13.5789C4.1275 13.9777 4.33478 14.4706 4.33333 15.0577L4.33333 24.9231Z"
+													fill="white"
+												/>
+											</svg>
+										</span>
+										<span class="text">Статистика</span>
+									</button>
+									<button
+										class="nav-link"
+										id="v-pills-messages-tab"
+										data-bs-toggle="pill"
+										data-bs-target="#v-pills-messages"
+										type="button"
+										role="tab"
+										aria-controls="v-pills-messages"
+										aria-selected="false"
+									>
+										<span class="icon pc">
+											<svg
+												width="24"
+												height="25"
+												viewBox="0 0 24 25"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													d="M4 18.5C3.71667 18.5 3.47933 18.404 3.288 18.212C3.09667 18.02 3.00067 17.7827 3 17.5C3 17.2167 3.096 16.9793 3.288 16.788C3.48 16.5967 3.71733 16.5007 4 16.5H15C15.2833 16.5 15.521 16.596 15.713 16.788C15.905 16.98 16.0007 17.2173 16 17.5C16 17.7833 15.904 18.021 15.712 18.213C15.52 18.405 15.2827 18.5007 15 18.5H4ZM4 13.5C3.71667 13.5 3.47933 13.404 3.288 13.212C3.09667 13.02 3.00067 12.7827 3 12.5C3 12.2167 3.096 11.9793 3.288 11.788C3.48 11.5967 3.71733 11.5007 4 11.5H12C12.2833 11.5 12.521 11.596 12.713 11.788C12.905 11.98 13.0007 12.2173 13 12.5C13 12.7833 12.904 13.021 12.712 13.213C12.52 13.405 12.2827 13.5007 12 13.5H4ZM4 8.5C3.71667 8.5 3.47933 8.404 3.288 8.212C3.09667 8.02 3.00067 7.78267 3 7.5C3 7.21667 3.096 6.97933 3.288 6.788C3.48 6.59667 3.71733 6.50067 4 6.5H15C15.2833 6.5 15.521 6.596 15.713 6.788C15.905 6.98 16.0007 7.21733 16 7.5C16 7.78333 15.904 8.021 15.712 8.213C15.52 8.405 15.2827 8.50067 15 8.5H4Z"
+													fill="#444444"
+												/>
+											</svg>
+										</span>
+										<span class="icon mob">
+											<svg
+												width="21"
+												height="27"
+												viewBox="0 0 21 27"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<g opacity="0.6">
+													<path
+														d="M15 8.50006C15 10.9853 12.9852 13.0001 10.5 13.0001C8.01472 13.0001 6 10.9853 6 8.50006C6 6.01478 8.01472 4.00006 10.5 4.00006C12.9852 4.00006 15 6.01478 15 8.50006Z"
+														stroke="white"
+														stroke-width="3"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													/>
+													<path
+														d="M10.5 17.0001C5.80558 17.0001 2 20.5818 2 25.0001L19 25.0001C19 20.5818 15.1944 17.0001 10.5 17.0001Z"
+														stroke="white"
+														stroke-width="3"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													/>
+												</g>
+											</svg>
+										</span>
+										<span class="text">Мои данные</span>
+									</button>
+									<button
+										class="nav-link"
+										id="v-pills-settings-tab"
+										data-bs-toggle="pill"
+										data-bs-target="#v-pills-settings"
+										type="button"
+										role="tab"
+										aria-controls="v-pills-settings"
+										aria-selected="false"
+									>
+										<span class="icon pc">
+											<svg
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													d="M12 19.125C11.0144 19.125 10.0881 18.9387 9.22125 18.5662C8.35438 18.1937 7.60031 17.6886 6.95906 17.0509C6.31781 16.4128 5.81028 15.6623 5.43645 14.7996C5.06263 13.9369 4.87547 13.0151 4.875 12.0342C4.875 10.4979 5.32031 9.11515 6.21094 7.88607C7.10156 6.657 8.28313 5.80019 9.75563 5.31566C10.1 5.19748 10.4178 5.23884 10.7089 5.43974C11.0001 5.64065 11.1455 5.91246 11.145 6.25519C11.145 6.49155 11.0768 6.70711 10.9405 6.90187C10.8042 7.09663 10.6289 7.2297 10.4147 7.30108C9.39344 7.62017 8.57097 8.21414 7.9473 9.083C7.32362 9.95186 7.01202 10.9356 7.0125 12.0342C7.0125 13.4169 7.49653 14.59 8.46458 15.5534C9.43262 16.5168 10.6111 16.9982 12 16.9978C12.6175 16.9978 13.2143 16.8914 13.7905 16.6787C14.3667 16.4659 14.8802 16.1587 15.3309 15.7569C15.5091 15.5914 15.7259 15.5087 15.9814 15.5087C16.237 15.5087 16.4536 15.5914 16.6312 15.7569C16.9044 16.005 17.0469 16.2858 17.0588 16.5993C17.0706 16.9127 16.94 17.1873 16.6669 17.4232C16.0256 17.9787 15.3103 18.4013 14.5208 18.691C13.7314 18.9808 12.8911 19.1255 12 19.125ZM16.9875 12.0342C16.9875 10.9469 16.6728 9.96911 16.0434 9.10073C15.4141 8.23234 14.5887 7.63246 13.5675 7.30108C13.3537 7.23017 13.1787 7.09734 13.0424 6.90258C12.9061 6.70782 12.8377 6.49202 12.8372 6.25519C12.8372 5.91246 12.9828 5.64065 13.2739 5.43974C13.5651 5.23884 13.8827 5.19748 14.2266 5.31566C15.7109 5.81201 16.8984 6.67473 17.7891 7.9038C18.6797 9.13287 19.125 10.5097 19.125 12.0342C19.125 12.2469 19.116 12.4627 19.0979 12.6816C19.0799 12.9005 19.0473 13.1397 19.0003 13.3992C18.9409 13.7419 18.7659 13.9872 18.4752 14.1352C18.1845 14.2832 17.8667 14.2919 17.5219 14.1614C17.2962 14.0787 17.1212 13.9279 16.9968 13.709C16.8723 13.4902 16.8336 13.2628 16.8806 13.0269C16.9163 12.826 16.9431 12.6487 16.9611 12.4951C16.9792 12.3415 16.988 12.1878 16.9875 12.0342Z"
+													fill="#444444"
+												/>
+											</svg>
+										</span>
+										<span class="icon mob">
+											<svg
+												width="25"
+												height="25"
+												viewBox="0 0 25 25"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													opacity="0.6"
+													d="M12.5 25.0001C10.7708 25.0001 9.14583 24.6645 7.625 23.9934C6.10416 23.3222 4.78125 22.4121 3.65625 21.2631C2.53125 20.1132 1.64083 18.7611 0.984997 17.2066C0.329164 15.6522 0.000830887 13.9913 -2.13727e-06 12.2239C-1.65327e-06 9.45571 0.781249 6.96435 2.34375 4.7498C3.90625 2.53526 5.97917 0.991463 8.5625 0.118422C9.16667 -0.094515 9.72417 -0.019987 10.235 0.342006C10.7458 0.703999 11.0008 1.19375 11 1.81127C11 2.23715 10.8804 2.62554 10.6413 2.97646C10.4021 3.32738 10.0946 3.56715 9.71875 3.69576C7.92708 4.27069 6.48417 5.34092 5.39 6.90643C4.29583 8.47194 3.74917 10.2444 3.75 12.2239C3.75 14.7153 4.59916 16.8289 6.2975 18.5647C7.99583 20.3006 10.0633 21.1681 12.5 21.1672C13.5833 21.1673 14.6304 20.9756 15.6412 20.5923C16.6521 20.209 17.5529 19.6554 18.3437 18.9314C18.6562 18.6333 19.0367 18.4842 19.485 18.4842C19.9333 18.4842 20.3133 18.6333 20.625 18.9314C21.1042 19.3786 21.3542 19.8845 21.375 20.4492C21.3958 21.0139 21.1667 21.5088 20.6875 21.9338C19.5625 22.9346 18.3075 23.6961 16.9225 24.2182C15.5375 24.7403 14.0633 25.001 12.5 25.0001ZM21.25 12.2239C21.25 10.2649 20.6979 8.50303 19.5938 6.93837C18.4896 5.37371 17.0417 4.29284 15.25 3.69577C14.875 3.568 14.5679 3.32866 14.3288 2.97774C14.0896 2.62682 13.9696 2.238 13.9688 1.81127C13.9688 1.19375 14.2242 0.704 14.735 0.342007C15.2458 -0.019986 15.8029 -0.0945138 16.4063 0.118423C19.0104 1.01276 21.0938 2.5672 22.6563 4.78175C24.2188 6.99629 25 9.47701 25 12.2239C25 12.6072 24.9842 12.996 24.9525 13.3904C24.9208 13.7847 24.8638 14.2157 24.7813 14.6833C24.6771 15.3008 24.37 15.7429 23.86 16.0095C23.35 16.2761 22.7925 16.2918 22.1875 16.0568C21.7917 15.9077 21.4846 15.636 21.2663 15.2416C21.0479 14.8473 20.98 14.4376 21.0625 14.0126C21.125 13.6506 21.1721 13.3312 21.2038 13.0543C21.2354 12.7775 21.2508 12.5007 21.25 12.2239Z"
+													fill="white"
+												/>
+											</svg>
+										</span>
+										<span class="text">Подписка</span>
+									</button>
+
+									<button
+										class="nav-link mob"
+										id="v-pills-last-tab"
+										data-bs-toggle="pill"
+										data-bs-target="#v-pills-last"
+										type="button"
+										role="tab"
+										aria-controls="v-pills-last"
+										aria-selected="true"
+									>
+										<span class="icon">
+											<svg
+												width="23"
+												height="25"
+												viewBox="0 0 23 25"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													d="M2.875 22.143L7.1875 22.143L7.1875 15.0001C7.1875 14.5954 7.3255 14.2563 7.6015 13.983C7.8775 13.7096 8.21866 13.5725 8.625 13.5715L14.375 13.5715C14.7823 13.5715 15.1239 13.7087 15.3999 13.983C15.6759 14.2573 15.8135 14.5963 15.8125 15.0001L15.8125 22.143L20.125 22.143L20.125 9.28584L11.5 2.85727L2.875 9.28583L2.875 22.143ZM-3.87158e-06 22.143L-1.62357e-06 9.28583C-1.54447e-06 8.83345 0.102061 8.40488 0.306186 8.00012C0.510311 7.59536 0.791582 7.26202 1.15 7.00012L9.775 0.571552C10.2781 0.1906 10.8531 0.000123968 11.5 0.000124081C12.1469 0.000124194 12.7219 0.190601 13.225 0.571553L21.85 7.00012C22.2094 7.26203 22.4911 7.59536 22.6952 8.00012C22.8994 8.40489 23.001 8.83346 23 9.28584L23 22.143C23 22.9287 22.7182 23.6015 22.1547 24.1615C21.5912 24.7215 20.9147 25.0011 20.125 25.0001L14.375 25.0001C13.9677 25.0001 13.6265 24.863 13.3515 24.5887C13.0765 24.3144 12.9385 23.9754 12.9375 23.5715L12.9375 16.4287L10.0625 16.4287L10.0625 23.5715C10.0625 23.9763 9.92449 24.3158 9.6485 24.5901C9.3725 24.8644 9.03133 25.0011 8.62499 25.0001L2.875 25.0001C2.08437 25.0001 1.40779 24.7206 0.845245 24.1615C0.282704 23.6025 0.000954324 22.9296 -3.87158e-06 22.143Z"
+													fill="white"
+												/>
+											</svg>
+										</span>
+									</button>
+								</div>
+							</div>
+
+							<div class="side-links">
+								<a href="/index.html" class="back-home">Вернуться на сайт</a>
+								<a href="#!" class="exit-btn">Выйти из аккаунта</a>
+							</div>
+						</div>
+
+						<div class="prsn-content">
+							<div class="content-head">
+								<a href="#!"><img src="images/account-img.png" alt="" /></a>
+							</div>
+
+							<div class="tab-content" id="v-pills-tabContent">
+								<div
+									class="tab-pane fade active show"
+									id="v-pills-home"
+									role="tabpanel"
+									aria-labelledby="v-pills-home-tab"
+								>
+									<div class="in-title">
+										<span>Мои карточки</span>
+									</div>
+
+									<div class="my-cards">
+										<div class="row mlr-12 mycards__container">
+											<div class="col-lg-4 plr-12">
+												<img class="loading" src="/images/loading.gif" alt="" />
+												<div class="add-card card-item">
+													<a href="pc-adding-words.html" class="add-btn">
+														<svg
+															width="80"
+															height="80"
+															viewBox="0 0 80 80"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+														>
+															<path
+																fill-rule="evenodd"
+																clip-rule="evenodd"
+																d="M40 79.5C61.8152 79.5 79.5 61.8152 79.5 40C79.5 18.1848 61.8152 0.5 40 0.5C18.1848 0.5 0.5 18.1848 0.5 40C0.5 61.8152 18.1848 79.5 40 79.5ZM38.9963 11.0551C40.3771 11.0551 41.4963 12.1744 41.4963 13.5551V37.1653H66.4455C67.8262 37.1653 68.9455 38.2845 68.9455 39.6653C68.9455 41.046 67.8262 42.1653 66.4455 42.1653H41.4963V66.4449C41.4963 67.8256 40.3771 68.9449 38.9963 68.9449C37.6156 68.9449 36.4963 67.8256 36.4963 66.4449V42.1653H13.5557C12.175 42.1653 11.0557 41.046 11.0557 39.6652C11.0557 38.2845 12.175 37.1653 13.5557 37.1653H36.4963V13.5551C36.4963 12.1744 37.6156 11.0551 38.9963 11.0551Z"
+																fill="#8FC0FA"
+															/>
+														</svg>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div
+									class="tab-pane fade"
+									id="v-pills-profile"
+									role="tabpanel"
+									aria-labelledby="v-pills-profile-tab"
+								>
+									<div class="statistcs">
+										<div class="in-title">
+											<span>Статистика</span>
+										</div>
+
+										<div class="statistcs-table">
+											<table class="table">
+												<thead>
+													<tr>
+														<th scope="col">№</th>
+														<th scope="col">СЛОВО</th>
+														<th scope="col">КОЛИЧЕСТВО <br />ОШИБОК</th>
+													</tr>
+												</thead>
+												<tbody></tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+
+								<div
+									class="tab-pane fade"
+									id="v-pills-messages"
+									role="tabpanel"
+									aria-labelledby="v-pills-messages-tab"
+								>
+									<div class="my-data">
+										<div class="in-title">
+											<span>Мои данные</span>
+										</div>
+
+										<form
+											class="editProfileData"
+											name="editProfileData"
+											action="#"
+										>
+											<div class="data-form">
+												<div class="form-group">
+													<input
+														type="text"
+														class="child_name"
+														name="child_name"
+														placeholder="Имя ребенка"
+													/>
+													<button type="button" class="change-btn">
+														<svg
+															width="17"
+															height="16"
+															viewBox="0 0 17 16"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+														>
+															<path
+																opacity="0.5"
+																d="M2.08333 14.1493H3.38958L12.35 5.56224L11.0437 4.31042L2.08333 12.8975V14.1493ZM0.25 15.9062V12.1727L12.35 0.598872C12.5333 0.437818 12.7358 0.313368 12.9573 0.225521C13.1788 0.137674 13.4118 0.09375 13.6562 0.09375C13.9007 0.09375 14.1375 0.137674 14.3667 0.225521C14.5958 0.313368 14.7944 0.445139 14.9625 0.620833L16.2229 1.85069C16.4062 2.01175 16.5399 2.20208 16.624 2.4217C16.708 2.64132 16.75 2.86094 16.75 3.08056C16.75 3.31481 16.708 3.53809 16.624 3.75039C16.5399 3.96269 16.4062 4.15668 16.2229 4.33238L4.14583 15.9062H0.25ZM11.6854 4.94731L11.0437 4.31042L12.35 5.56224L11.6854 4.94731Z"
+																fill="#A2A2A2"
+															/>
+														</svg>
+													</button>
+												</div>
+												<div class="form-group">
+													<input
+														type="email"
+														class="login"
+														name="login"
+														placeholder="Email"
+													/>
+													<button type="button" class="change-btn">
+														<svg
+															width="17"
+															height="16"
+															viewBox="0 0 17 16"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+														>
+															<path
+																opacity="0.5"
+																d="M2.08333 14.1493H3.38958L12.35 5.56224L11.0437 4.31042L2.08333 12.8975V14.1493ZM0.25 15.9062V12.1727L12.35 0.598872C12.5333 0.437818 12.7358 0.313368 12.9573 0.225521C13.1788 0.137674 13.4118 0.09375 13.6562 0.09375C13.9007 0.09375 14.1375 0.137674 14.3667 0.225521C14.5958 0.313368 14.7944 0.445139 14.9625 0.620833L16.2229 1.85069C16.4062 2.01175 16.5399 2.20208 16.624 2.4217C16.708 2.64132 16.75 2.86094 16.75 3.08056C16.75 3.31481 16.708 3.53809 16.624 3.75039C16.5399 3.96269 16.4062 4.15668 16.2229 4.33238L4.14583 15.9062H0.25ZM11.6854 4.94731L11.0437 4.31042L12.35 5.56224L11.6854 4.94731Z"
+																fill="#A2A2A2"
+															/>
+														</svg>
+													</button>
+												</div>
+												<div class="form-group">
+													<input
+														type="password"
+														class="password"
+														name="password"
+														placeholder="Пароль"
+													/>
+													<button type="button" class="change-btn">
+														<svg
+															width="17"
+															height="16"
+															viewBox="0 0 17 16"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+														>
+															<path
+																opacity="0.5"
+																d="M2.08333 14.1493H3.38958L12.35 5.56224L11.0437 4.31042L2.08333 12.8975V14.1493ZM0.25 15.9062V12.1727L12.35 0.598872C12.5333 0.437818 12.7358 0.313368 12.9573 0.225521C13.1788 0.137674 13.4118 0.09375 13.6562 0.09375C13.9007 0.09375 14.1375 0.137674 14.3667 0.225521C14.5958 0.313368 14.7944 0.445139 14.9625 0.620833L16.2229 1.85069C16.4062 2.01175 16.5399 2.20208 16.624 2.4217C16.708 2.64132 16.75 2.86094 16.75 3.08056C16.75 3.31481 16.708 3.53809 16.624 3.75039C16.5399 3.96269 16.4062 4.15668 16.2229 4.33238L4.14583 15.9062H0.25ZM11.6854 4.94731L11.0437 4.31042L12.35 5.56224L11.6854 4.94731Z"
+																fill="#A2A2A2"
+															/>
+														</svg>
+													</button>
+												</div>
+												<div class="form-group">
+													<input
+														type="password"
+														name="confirm_password"
+														placeholder="Подтверждение пароля"
+													/>
+													<button type="button" class="change-btn">
+														<svg
+															width="17"
+															height="16"
+															viewBox="0 0 17 16"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+														>
+															<path
+																opacity="0.5"
+																d="M2.08333 14.1493H3.38958L12.35 5.56224L11.0437 4.31042L2.08333 12.8975V14.1493ZM0.25 15.9062V12.1727L12.35 0.598872C12.5333 0.437818 12.7358 0.313368 12.9573 0.225521C13.1788 0.137674 13.4118 0.09375 13.6562 0.09375C13.9007 0.09375 14.1375 0.137674 14.3667 0.225521C14.5958 0.313368 14.7944 0.445139 14.9625 0.620833L16.2229 1.85069C16.4062 2.01175 16.5399 2.20208 16.624 2.4217C16.708 2.64132 16.75 2.86094 16.75 3.08056C16.75 3.31481 16.708 3.53809 16.624 3.75039C16.5399 3.96269 16.4062 4.15668 16.2229 4.33238L4.14583 15.9062H0.25ZM11.6854 4.94731L11.0437 4.31042L12.35 5.56224L11.6854 4.94731Z"
+																fill="#A2A2A2"
+															/>
+														</svg>
+													</button>
+												</div>
+
+												<div class="form-btns">
+													<button type="submit" class="save-btn">
+														Сохранить данные
+													</button>
+													<button
+														type="button"
+														data-bs-toggle="modal"
+														data-bs-target="#deleteConfirm"
+														class="delete-btn"
+													>
+														Удалить профиль
+													</button>
+												</div>
+											</div>
+										</form>
+
+										<div class="mob">
+											<div class="mob-btns">
+												<a href="#!" class="home-btn">Вернуться на сайт</a>
+												<a href="#!" class="exit-btn">Выйти из аккаунта</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div
+									class="tab-pane fade"
+									id="v-pills-settings"
+									role="tabpanel"
+									aria-labelledby="v-pills-settings-tab"
+								>
+									<div class="subs-tab mb-4 subscribed">
+										<div class="top-title">
+											<span>ПОДПИСКА СТАРТ:</span>
+											<p>Действительна с 01.01.2024 по 01.01.2025</p>
+											<button
+												class="extend"
+												data-bs-toggle="modal"
+												data-bs-target="#paymentModal"
+											>
+												Продлить
+											</button>
+										</div>
+
+										<div class="in-title">
+											<span>Сменить подписку</span>
+										</div>
+
+										<div class="row subs-rov mlr-8">
+											<div class="col-lg-4 plr-8">
+												<div class="subs-block active">
+													<img
+														src="images/icons/red-mark.svg"
+														alt=""
+														class="mark-img"
+													/>
+
+													<div class="subs-img">
+														<img src="images/icons/subs-icon2.svg" alt="" />
+													</div>
+													<div class="subs-text">
+														<span>ПРОФИ <span>1800 руб/год</span></span>
+														<p>1500 руб/год</p>
+														<ul>
+															<li>-Доступ на год</li>
+															<li>
+																- Легко запомнить 400 словарных слов НАВСЕГДА
+															</li>
+															<li>- Словарный диктант ВСЕГДА на «5»</li>
+														</ul>
+													</div>
+													<div class="subs-link">
+														<button
+															class="blue-btn prof"
+															data-bs-toggle="modal"
+															data-bs-target="#paymentModal"
+														>
+															Выбрать
+														</button>
+													</div>
+												</div>
+											</div>
+
+											<div class="col-lg-4 plr-8">
+												<div class="subs-block">
+													<div class="subs-img">
+														<img src="images/icons/subs-icon3.svg" alt="" />
+													</div>
+													<div class="subs-text">
+														<span>КОМФОРТ</span>
+														<p>1500 руб/год <span>Доступ на 7 дней</span></p>
+													</div>
+													<div class="subs-link">
+														<button
+															class="blue-btn comfort"
+															data-bs-toggle="modal"
+															data-bs-target="#paymentModal"
+														>
+															Выбрать
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div
+									class="tab-pane fade"
+									id="v-pills-last"
+									role="tabpanel"
+									aria-labelledby="v-pills-last-tab"
+								>
+									<div class="mob">
+										<div class="last-tab">
+											<div class="last-title">
+												<span>ДОБРО ПОЖАЛОВАТЬ!</span>
+												<p>Можете перейти к тестам</p>
+											</div>
+											<div class="last-btn">
+												<a href="#!" class="blue-btn">Пройти тестирование</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Modal Payment -->
+		<div class="modal fade" id="paymentModal" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<button
+							type="button"
+							class="modal-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						>
+							<svg
+								width="16"
+								height="16"
+								viewBox="0 0 16 16"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M15 1L1 15M1 1L15 15"
+									stroke="#A2A2A2"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+						</button>
+						<div class="title-modal">
+							<p>ОПЛАТА ТАРИФА <span>КОМФОРТ</span></p>
+						</div>
+
+						<form action="#!" name="payment-form" id="subscription-form">
+							<div class="modal-card card">
+								<div class="card-js stripe" data-stripe="true">
+									<input
+										class="card-number my-custom-class"
+										name="card-number"
+										placeholder="Номер Карты"
+									/>
+									<input
+										class="expiry-month"
+										name="expiry-month"
+										placeholder="ММ"
+									/>
+									<input
+										class="expiry-year"
+										name="expiry-year"
+										placeholder="ГГ"
+									/>
+									<input class="cvc" name="cvc" placeholder="CVV" />
+								</div>
+
+								<div class="check-email">
+									<label class="control control--checkbox">
+										<input type="checkbox" />
+										<div class="control__indicator"></div>
+										<span>Отправить квитанцию на E-mail</span>
+									</label>
+								</div>
+
+								<div class="form-btn">
+									<button
+										type="button"
+										class="send-btn"
+										data-bs-toggle="modal"
+										data-bs-target="#successModal"
+									>
+										Оплатить
+									</button>
+									<span
+										>При оплате данные вашей карты сохраняются
+										<img src="images/icons/question-icon.svg" alt=""
+									/></span>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal Success -->
+		<div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="success-modal">
+							<img src="images/icons/success-icon.svg" alt="" />
+							<span>УСПЕШНАЯ ОПЛАТА!</span>
+							<p>Оплата выбранного тарифа произошла успешно</p>
+							<div class="success-btn">
+								<button data-bs-dismiss="modal" aria-label="Close">
+									Готово
+								</button>
+								<span
+									>При оплате данные вашей карты сохраняются
+									<img src="images/icons/question-icon.svg" alt=""
+								/></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal Fail -->
+		<div class="modal fade" id="failModal" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="success-modal">
+							<img src="images/icons/fail-icon.svg" alt="" />
+							<span>ОПЛАТА НЕ ПРОШЛА!</span>
+							<p>Оплата выбранного тарифа не прошла, попробуйте ещё раз</p>
+							<div class="success-btn">
+								<button data-bs-dismiss="modal" aria-label="Close">
+									Готово
+								</button>
+								<span
+									>При оплате данные вашей карты сохраняются
+									<img src="images/icons/question-icon.svg" alt=""
+								/></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="deleteConfirm" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<button
+							type="button"
+							class="modal-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						>
+							<svg
+								width="16"
+								height="16"
+								viewBox="0 0 16 16"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M15 1L1 15M1 1L15 15"
+									stroke="#A2A2A2"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+						</button>
+						<div class="title-modal">
+							<p>Подтверждение</p>
+						</div>
+
+						<div class="confirm-container">
+							<button
+								type="submit"
+								data-bs-dismiss="modal"
+								aria-label="Close"
+								class="send-btn confirm-delete-btn"
+							>
+								Удалить
+							</button>
+							<button
+								type="submit"
+								data-bs-dismiss="modal"
+								aria-label="Close"
+								class="send-btn cancel-btn"
+							>
+								Оставить
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/jquery-3.7.0.min.js"></script>
+		<script src="js/jquery.validate.min.js"></script>
+		<script src="libs/bootstrap5/popper.js"></script>
+		<script src="libs/bootstrap5/bootstrap.min.js"></script>
+		<script src="js/swiper-bundle.min.js"></script>
+		<script src="js/card.min.js"></script>
+		<script src="js/script.js"></script>
+	</body>
+</html>
